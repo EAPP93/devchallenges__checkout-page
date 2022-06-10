@@ -24,7 +24,21 @@
   --font-color-text-orange: #F2994A;
   --font-color-text-white: #ffffff;
   --font-color-footer: #BDBDBD;
+
+  /* dark mode */
+
+  @media screen and (prefers-color-scheme: dark) {
+    /* background color */
+    --bg-body: #2a2a2a;
+
+    /* font color */
+    --font-color-title: #e6eeeb;
+    --font-color-subtitle: #dfdfdf;
+    --font-color-label: #f7f7f7;
+    --font-color-text-white: #ffffff;
+  }
 }
+
 
 
 * {
@@ -44,9 +58,7 @@ body {
   padding: 1.5rem 0.75rem;
 }
 
-header {
-  padding: .5rem 0;
-}
+
 
 .title {
   font-family: var(--font-family-text);
@@ -57,6 +69,7 @@ header {
 }
 
 main {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -69,7 +82,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
-  max-width: 24rem;
+  max-width: 40rem;
 }
 
 .card__article {
@@ -84,18 +97,19 @@ main {
 .card__img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 0.75rem;
 }
 
 .card__text-container {
-  width: 60%;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 0.5rem;
 }
 
 .card__article-name {
+  width: 100%;
   font-family: var(--font-family-text);
   font-weight: var(--font-weight-semi-bold);
   font-size: var(--font-size-small);
@@ -124,7 +138,7 @@ main {
 }
 
 .card__counter-container {
-  max-width: 12rem;
+  max-width: 8rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -173,15 +187,18 @@ main {
 .form {
   display: flex;
   flex-direction: column;
-  max-width: 30rem;
-  gap: 2.8rem;
-  margin-top: 1rem;
+  gap: 1rem;
 }
 
 .form__group {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  padding: 0;
+}
+
+.form__group:first-child {
+  margin-bottom: 2rem;
 }
 
 .form__title {
@@ -205,15 +222,28 @@ main {
   color: var(--font-color-label);
 }
 
+.form__input-container {
+  position: relative;
+}
+
 .form__input {
+  width: 100%;
   font-family: var(--font-family-text);
   font-weight: var(--font-weight-semi-bold);
   font-size: var(--font-size-small);
   color: var(--font-color-text);
   border: solid 1px var(--border-icon);
-  padding: 0.75rem 0.625rem;
+  padding: 0.75rem 0.625rem 0.75rem 2.75rem;
   border-radius: 0.5rem;
   cursor: pointer;
+}
+
+.form__icon {
+  position: absolute;
+  width: var(--font-size-small);
+  top: 50%;
+  left: 0.75rem;
+  transform: translate(0, -50%);
 }
 
 .form__container-select {
@@ -222,7 +252,11 @@ main {
 }
 
 .form__container-select>.form__container {
-  width: 45%;
+  width: 47%;
+}
+
+.select {
+  appearance: none;
 }
 
 .form__checkbox {
@@ -255,7 +289,7 @@ main {
 
 footer {
   text-align: center;
-  margin-top: calc(7.5% + 2vh);
+  margin-top: calc(6% + 2vh);
 }
 
 .footer,
@@ -272,18 +306,31 @@ footer {
 }
 
 @media (min-width: 1275px) {
+
   header {
-    margin: 0 20.5%;
+    display: flex;
+    justify-content: center;
+    padding-right: 45.5rem;
+    margin-bottom: 2rem;
   }
 
   main {
     flex-direction: row-reverse;
-    justify-content: start;
-    margin: 0 20%;
+    justify-content: center;
   }
 
   .card {
-    max-height: 28rem;
+    max-width: 26rem;
+    max-height: 30.5rem;
   }
 
+}
+
+@media screen and (prefers-color-scheme: dark) {
+
+  .card__article-name,
+  .card__cost-title,
+  .card__cost {
+    color: #333333;
+  }
 }

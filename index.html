@@ -37,7 +37,7 @@
           <img class="card__img" src="./assets/photo1.png" alt="">
         </picture>
         <section class="card__text-container">
-          <h3 class="card__title">Vintage Backbag</h3>
+          <h3 class="card__article-name">Vintage Backbag</h3>
           <div class="card__price-container">
             <p class="card__price">$54.99</p>
             <p class="card__discount">$94.99</p>
@@ -55,7 +55,7 @@
           <img class="card__img" src="./assets/photo2.png" alt="">
         </picture>
         <section class="card__text-container">
-          <h3 class="card__">Levi Shoes</h3>
+          <h3 class="card__article-name">Levi Shoes</h3>
           <div class="card__price-container">
             <p class="card__price">$74.99</p>
             <p class="card__discount">$124.99</p>
@@ -85,11 +85,17 @@
         <legend class="form__title">Contact infomation</legend>
         <div class="form__container">
           <label class="form__label" for="email">E-mail</label>
-          <input class="form__input" type="email" name="email" id="email" placeholder="Enter your email..." />
+          <div class="form__input-container">
+            <span class="form__icon material-icons">mail</span>
+            <input class="form__input " type="email" name="email" id="email" placeholder="Enter your email..." />
+          </div>
         </div>
         <div class="form__container">
           <label class="form__label" for="phone">Phone</label>
-          <input class="form__input" type="tel" name="phone" id="phone" placeholder="Enter your phone..." />
+          <div class="form__input-container">
+            <span class="form__icon material-icons">phone</span>
+            <input class="form__input" type="tel" name="phone" id="phone" placeholder="Enter your phone..." />
+          </div>
         </div>
       </fieldset>
 
@@ -97,29 +103,44 @@
         <legend class="form__title">Shipping address</legend>
         <div class="form__container">
           <label class="form__label" for="name">Full name</label>
-          <input class="form__input" type="text" name="name" id="name" placeholder="Your name..." />
+          <div class="form__input-container">
+            <span class="form__icon material-icons">account_circle</span>
+            <input class="form__input" type="text" name="name" id="name" placeholder="Your name..." />
+          </div>
         </div>
         <div class="form__container">
           <label class="form__label" for="address">Address</label>
-          <input class="form__input" type="text" name="address" id="address" placeholder="Your address..." />
+          <div class="form__input-container">
+            <span class="form__icon material-icons">home</span>
+            <input class="form__input" type="text" name="address" id="address" placeholder="Your address..." />
+          </div>
         </div>
         <div class="form__container">
           <label class="form__label" for="city">City</label>
-          <input class="form__input" type="text" name="city" id="city" placeholder="Your city..." />
+          <div class="form__input-container">
+            <span class="form__icon material-icons">location_city</span>
+            <input class="form__input" type="text" name="city" id="city" placeholder="Your city..." />
+          </div>
         </div>
         <div class="form__container-select">
           <div class="form__container">
             <label class="form__label" for="country">Country</label>
-            <select class="form__input" title="country" id="country">
-              <option value="default" selected>Your country..</option>
-              <option value="USA">United States</option>
-              <option value="Spain">Spain</option>
-              <option value="Nicaragua">Nicaragua</option>
-            </select>
+            <div class="form__input-container">
+              <span class="form__icon material-icons">location_city</span>
+              <select class="form__input select" title="country" id="country">
+                <option value="default" selected>Your country..</option>
+                <option value="USA">United States</option>
+                <option value="Spain">Spain</option>
+                <option value="Nicaragua">Nicaragua</option>
+              </select>
+            </div>
           </div>
           <div class="form__container">
             <label class="form__label" for="zip-code">Your postal code..</label>
-            <input class="form__input" type="number" name="zip-code" id="zip-code" placeholder="Your postal code.." />
+            <div class="form__input-container">
+              <span class="form__icon material-icons">markunread_mailbox</span>
+              <input class="form__input" type="number" name="zip-code" id="zip-code" placeholder="Your postal code.." />
+            </div>
           </div>
         </div>
       </fieldset>
